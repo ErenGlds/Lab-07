@@ -3,7 +3,6 @@ const BASE_URL = "https://dummyjson.com";
 async function request(url, signal) {
   const response = await fetch(url, { signal });
 
-  // fetch, 404/500 gibi durumlarda reject etmez; kendimiz hata fırlatmalıyız
   if (!response.ok) {
     const error = new Error(`Request failed with status ${response.status}`);
     error.status = response.status;
